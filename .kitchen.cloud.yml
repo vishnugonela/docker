@@ -311,3 +311,19 @@ suites:
   ]
   run_list:
   - recipe[docker_test::auto]
+
+
+#####################
+# 720/reproduce
+#####################
+
+- name: rancher
+  includes: [
+    'ubuntu-14.04',
+  ]
+  attributes:
+    docker:
+      version: '1.12.3'
+  run_list:
+  - recipe[docker_test::default]
+  - recipe[docker_test::rancher]
